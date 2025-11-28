@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<!-- for blog category menu -->
+{% block category %}
+
+
+<div class="category">
+    <button class="scroll-button left hidden" id="scrollLeftButton"><i class="fa-solid fa-angle-left"></i></button>
+    <div class="category-scroller" id="scroller">
+        <a href="{% url 'home' %}">
+            <button class="btn {% if not current_category %}active{% endif %}" data-name="all">All</button>
+        </a>
+        {% for category in categories %}
+        <a href="{% url 'posts_by_category' category.cat_slug %}">
+            <button
+                class="btn {% if current_category and current_category.cat_slug == category.cat_slug %}active{% endif %}"
+                data-name="{{ category.cat_slug }}">
+                {{ category.cat_name }}
+            </button>
+        </a>
+        {% endfor %}
+    </div>
+    <button class="scroll-button right" id="scrollRightButton"><i class="fa-solid fa-angle-right"></i></button>
+</div>
+
+{% endblock %}
+
+<!-- posts -->
+{% block content %}
+<!-- Main Content Section  -->
+<div class="card-section">
+    <div class="card-list">
+        {% for post in user_post %}
+        <div class="card" data-name="{{ post.post_category.cat_slug|default:'' }}"
+            onclick="window.location.href='{% url 'post_detail' post.post_slug %}'"
+            aria-label="Read post titled {{ post.post_title|default:'this post' }}">
+
+            <img src="{{ post.image.url|default:'' }}" alt="{{ post.post_title|default:'Post image' }}" loading="lazy">
+
+            <div class="read--time">
+                <span>{{ post.read_count|default:0 }} read</span>
+                <div class="dot" aria-hidden="true"></div>
+                <span>{{ post.time_since_posted|default:'' }}</span>
+            </div>
+
+            <h2>{{ post.post_title|default:'Untitled' }}</h2>
+            <!-- <p>{{ post.description|truncatewords:20|default:'' }}</p> -->
+
+            <div class="creater-profile">
+                <a href="{% url 'profile_detail' post.author.username %}">
+                    {% if post.author.profile_picture %}
+                    <img src="{{ post.author.profile_picture.url }}" alt="{{ post.author.username }}'s Profile Picture">
+                    {% else %}
+                    <img src="{% static 'images/user.png' %}" alt="Default Profile Picture">
+                    {% endif %}
+                </a>
+                <a href="{% url 'profile_detail' post.author.username %}">
+                    <h2 id="profile-name">{{ post.author.username}}</h2>
+                </a>
+            </div>
+
+
+
+        </div>
+
+        {% empty %}
+        <p>No posts available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

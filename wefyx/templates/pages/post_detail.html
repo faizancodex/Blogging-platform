@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{%static 'css/post_detail.css' %}">
+<!-- Blog Card -->
+<main class="blog-post-container">
+    <article class="blog-post">
+        <h1 class="blog-heading">{{ post.post_title }}</h1>
+
+        <img class="thumbnail" src="{{ post.image.url }}" alt="{{ post.post_title }}">
+
+        <div class="read--time">
+            <span>{{ post.read_count }} read</span>
+            <div class="dot"></div>
+            <span>{{ post.time_since_posted }}</span>
+        </div>
+
+        <!-- <p class="blog-content">{{ post.description }}</p> -->
+        <div class="blog-content">
+            {{ post.description|safe }}
+        </div>
+
+        <div class="creater-profile">
+            <a href="{% url 'profile_detail' post.author.username %}">
+                {% if post.author.profile_picture %}
+                <img src="{{ post.author.profile_picture.url }}" alt="{{ post.author.username }}'s Profile Picture">
+                {% else %}
+                <img src="{% static 'images/user.png' %}" alt="Default Profile Picture">
+                {% endif %}
+            </a>
+            <a href="{% url 'profile_detail' post.author.username %}">
+                <h2 id="profile-name">{{ post.author.username}}</h2>
+            </a>
+        </div>
+
+
+    </article>
+</main>
+
+{% endblock %}

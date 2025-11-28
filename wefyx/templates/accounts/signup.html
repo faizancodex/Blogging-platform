@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="{%static 'css/accounts.css' %}" type="text/css">
+
+    <!-- fontawesome cdn -->
+    <script src="https://kit.fontawesome.com/47bfcb75ec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'images/we.png' %}" type="image/x-icon">
+
+    <!-- boxicons cdn -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<style>
+    .message-block {
+        margin-bottom: 15px;
+    }
+
+    .alert.error {
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="account_container">
+        <!-- Signup form -->
+        <div class="account_form">
+            {% if messages %}
+            <div class="message-block">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <h2>Create account</h2>
+
+            <form method="POST" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <div class="field">
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+
+                <div class="field">
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+
+                <div class="field">
+                    <input type="password" name="password1" placeholder="Create a Password" class="password">
+                </div>
+
+                <div class="field">
+                    <input type="password" name="password2" placeholder="Confirm Password" class="password">
+                    <i class='bx bx-hide pw-eye'></i>
+                </div>
+
+
+                <div class="field ">
+                    <button type="submit">Continue</button>
+                </div>
+            </form>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="" class="field facebook">
+                    <img src="/static/images/facebook.png" alt="facebook">
+                    <span>Login with facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="" class="field google">
+                    <img src="/static/images/google.png" alt="facebook">
+                    <span>Login with Google</span>
+                </a>
+            </div>
+
+            <div class="form-link form-terms">
+                <span>Please review and agree to our <a href="#" target="_blank">Terms of Service</a> and <a href="#"
+                        target="_blank">Privacy
+                        Policy</a> before continuing.</span>
+            </div>
+
+            <div class="form-link">
+                <span>Already have an account? <a class="link" href="{% url 'login' %}">Login</a></span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+
+</html>

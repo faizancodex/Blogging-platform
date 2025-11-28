@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/explore.css' %}">
+<script defer src="{% static 'js/explore.js' %}"></script>
+
+<div class="explore-container">
+    <h1 class="explore-title">Explore Our Blog</h1>
+
+    <!-- Featured Blog -->
+    <div class="featured-post">
+        <img src="{% static 'images/tr2.jpg' %}" alt="Featured" class="featured-img">
+        <div class="featured-content">
+            <h2>Building a Blog with Django</h2>
+            <p>Learn how to create a powerful blog application using Django and its templating engine.</p>
+            <a href="#" class="read-btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- Recent Posts -->
+    <h2 class="section-title">Recent Posts</h2>
+    <div class="card-grid">
+
+        <div class="blog-card">
+            <img src="{% static 'images/tr1.jpg' %}" alt="Post 1">
+            <div class="card-content">
+                <h3>Django Templates Guide</h3>
+                <p>Master the basics of Django templates for clean and dynamic layouts.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="{% static 'images/tr3.jpg' %}" alt="Post 2">
+            <div class="card-content">
+                <h3>Deploy with Heroku</h3>
+                <p>Step-by-step deployment guide for Django apps on Heroku.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="{% static 'images/tr5.jpg' %}" alt="Post 3">
+            <div class="card-content">
+                <h3>Django vs Flask</h3>
+                <p>Compare two popular Python frameworks to make the right choice.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

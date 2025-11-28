@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  /* profile.css */
+
+  .edit_container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .edit_container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+  }
+
+  .edit_container form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .edit_container form label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .edit_container form input,
+  .edit_container form textarea,
+  .edit_container form select {
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .edit_container form input:focus,
+  .edit_container form textarea:focus,
+  .edit_container form select:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 4px #a89bff;
+  }
+
+  .edit_container button[type="submit"] {
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .edit_container button[type="submit"]:hover {
+    background-color: #574fd6;
+  }
+</style>
+
+
+<div class="edit_container">
+  <h2>Edit Your Profile</h2>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+  </form>
+
+  
+</div>
+{% endblock %}

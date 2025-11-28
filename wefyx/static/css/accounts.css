@@ -1,0 +1,168 @@
+ * {
+            margin: 0;
+            padding: 0;
+            font-family: "Lato", sans-serif;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        :root {
+            --btn-color: #007bff;
+            --font-color: #fff;
+            --my-font-size: 16px;
+        }
+
+        .account_container {
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            /* height: 100vh; */
+        }
+
+        .account_form {
+            /* background: #eaeaea; */
+            border: 1px #eaeaea solid;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+
+        .account_form h2 {
+            /* margin-bottom: 20px; */
+            color: #333;
+        }
+
+        .account_form .field {
+            width: 100%;
+            height: 40px;
+            margin-top: 20px;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .account_form form .field input {
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+            border: 1px solid #bfbfbf;
+            border-radius: 6px;
+            font-size: var(--my-font-size);
+            outline: none;
+            box-sizing: border-box;
+            transition: 0.2s ease-in-out;
+        }
+
+        .account_form form .field button {
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+            border-radius: 6px;
+            font-size: var(--my-font-size);
+            outline: none;
+            box-sizing: border-box;
+            transition: 0.2s ease-in-out;
+
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+
+
+        .account_form form .field input:hover {
+            border: 1px solid #333;
+        }
+
+        .account_form form .field input:focus {
+            border: 1px solid #007bff;
+        }
+
+
+        .account_form form .field button:hover {
+            background-color: #0069d9;
+        }
+
+        .pw-eye {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+
+        }
+
+        .form-link {
+            margin-top: 20px;
+        }
+
+        .form-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: var(--my-font-size);
+        }
+
+        .form-link a:hover {
+            text-decoration: underline;
+        }
+
+        .line {
+            height: 1px;
+            width: 100%;
+            margin-top: 30px;
+            position: relative;
+            background-color: #bfbfbf;
+        }
+
+        .line::before {
+            content: "OR";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: #333;
+            padding: 0 15px;
+        }
+
+        .media-options a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            margin-top: 20px;
+            font-size: var(--my-font-size);
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .media-options img {
+            width: 28px;
+            position: absolute;
+            left: 15px;
+        }
+
+        .media-options a.facebook {
+            color: white;
+            background-color: #4267b2;
+        }
+
+        .media-options a.facebook:hover {
+            background-color: #2f56a5;
+        }
+
+        .media-options a.google {
+            color: #333;
+            border: 1px solid #bfbfbf;
+            background-color: #fff;
+        }
+
+        .media-options a.google:hover {
+            border: 1px solid #007bff;
+            background-color: #fafeff;
+        }

@@ -1,0 +1,97 @@
+.explore-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.explore-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.featured-post {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 3rem;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.featured-img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.featured-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+.read-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.read-btn:hover {
+    background-color: #003d80;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.blog-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: #fff;
+}
+
+.blog-card:hover {
+    transform: scale(1.03);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card-content a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
+}

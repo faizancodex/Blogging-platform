@@ -1,0 +1,27 @@
+.blog-post-container .thumbnail {
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.blog-post-container .user-img {
+  width: 50px;
+}
+
+.blog-post-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.blog-post-container .blog-post {
+  width: 70%;
+}
+
+.blog-post-container .blog-heading {
+  margin-bottom: 30px;
+}
+.blog-post-container .blog-content {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

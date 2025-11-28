@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/guides.css' %}">
+<script defer src="{% static 'js/guides.js' %}"></script>
+
+<div class="guides-container">
+    <h1 class="guides-title">Blogging Guides & Resources</h1>
+    <p class="guides-subtitle">Master the art of blogging, content creation, SEO, and more.</p>
+
+    <div class="guides-grid">
+
+        <!-- Guide 1 -->
+        <div class="guide-card">
+            <img src="{% static 'images/tr1.jpg' %}" alt="SEO Guide">
+            <div class="guide-info">
+                <h3>Beginner’s Guide to SEO for Blogs</h3>
+                <p>Learn how to optimize your blog posts to rank better on Google using SEO best practices.</p>
+                <a href="#" class="guide-link">Read More</a>
+            </div>
+        </div>
+
+        <!-- Guide 2 -->
+        <div class="guide-card">
+            <img src="{% static 'images/tr2.jpg' %}" alt="Content Planning">
+            <div class="guide-info">
+                <h3>Planning Blog Content Like a Pro</h3>
+                <p>Organize your writing schedule and generate engaging blog ideas your readers will love.</p>
+                <a href="#" class="guide-link">Read More</a>
+            </div>
+        </div>
+
+        <!-- Guide 3 -->
+        <div class="guide-card">
+            <img src="{% static 'images/tr3.jpg' %}" alt="Blog Design">
+            <div class="guide-info">
+                <h3>Design Tips for a Beautiful Blog</h3>
+                <p>Make your blog look polished and professional without needing a designer.</p>
+                <a href="#" class="guide-link">Read More</a>
+            </div>
+        </div>
+
+        <!-- Guide 4 -->
+        <div class="guide-card">
+            <img src="{% static 'images/tr5.jpg' %}" alt="Django Blog">
+            <div class="guide-info">
+                <h3>How to Build a Blog with Django</h3>
+                <p>Step-by-step instructions to set up a blog using Django and its template system.</p>
+                <a href="#" class="guide-link">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

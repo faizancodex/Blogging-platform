@@ -1,0 +1,70 @@
+.guides-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+}
+
+.guides-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.guides-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.guide-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-6px);
+}
+
+.guide-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.guide-info {
+    padding: 1rem;
+}
+
+.guide-info h3 {
+    margin-bottom: 0.5rem;
+    color: #34495e;
+}
+
+.guide-info p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.guide-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.guide-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,69 @@
+.bookstore-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.bookstore-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.book-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.book-card:hover {
+    transform: scale(1.03);
+}
+
+.book-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.book-info {
+    padding: 1rem;
+}
+
+.book-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.book-info p {
+    color: #555;
+    font-weight: bold;
+}
+
+.buy-btn {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.5rem 1rem;
+    background-color: #27ae60;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #1e8449;
+}

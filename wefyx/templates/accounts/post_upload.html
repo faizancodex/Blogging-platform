@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .upload-container {
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .upload-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .upload-container label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #444;
+  }
+
+  .upload-container input[type="text"],
+  .upload-container select,
+  .upload-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  /* Fix for TinyMCE wrapper */
+  .tox-tinymce {
+    border-radius: 6px !important;
+    box-sizing: border-box;
+    width: 100% !important;
+  }
+
+  .upload-container button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .upload-container button:hover {
+    background-color: #0056b3;
+  }
+
+  .errorlist {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+
+
+  .alert {
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+  }
+</style>
+
+
+
+<div class="upload-container">
+  <h2>Upload a New Post</h2>
+
+  {% if messages %}
+  <div class="alert-container">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+      <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.media }}
+
+    {% for field in form %}
+    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field }}
+    {% if field.errors %}
+    <div class="errorlist">{{ field.errors }}</div>
+    {% endif %}
+    {% endfor %}
+
+    <button type="submit">Publish</button>
+  </form>
+</div>
+{% endblock %}

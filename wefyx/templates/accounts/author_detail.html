@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/author_detail.css' %}">
+
+<!-- ajax -->
+<script>
+    function toggleFollow(username) {
+        fetch("{% url 'follow_toggle' %}", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'username=' + encodeURIComponent(username)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const btn = document.getElementById('follow-btn');
+                    btn.textContent = data.is_following ? 'Unfollow' : 'Follow';
+                    document.getElementById('profile-followers-count').textContent = data.follower_count;
+                }
+            });
+    }
+</script>
+
+
+<div class="container">
+    <!-- Profile Section -->
+    <section id="profile" class="content-section">
+        <!-- Profile view -->
+        <div id="profile-view">
+            <div class="profile">
+                <div class="profile-info-container">
+                    {% if profile_user.profile_picture %}
+                    <img src="{{ profile_user.profile_picture.url }}"
+                        alt="{{ profile_user.get_full_name|default:profile_user.username }}'s Avatar" />
+                    {% else %}
+                    <img src="{% static 'images/user.png' %}" alt="Default Avatar" />
+                    {% endif %}
+
+
+                    <div class="profile-info">
+                        <div class="name-follow-btn">
+                            <h2 id="profile-name">{{ profile_user.username }}</h2>
+
+                            {% if request.user.is_authenticated %}
+                            {% if request.user == profile_user %}
+                            <!-- Profile owner: show Edit Profile button -->
+                            <a href="{% url 'profileEdit' %}" class="follow-btn">Edit Profile</a>
+                            {% else %}
+                            <!-- Logged-in visitor: show Follow/Unfollow -->
+                            <button id="follow-btn" class="follow-btn"
+                                onclick="toggleFollow('{{ profile_user.username }}')">
+                                {% if request.user in profile_user.followers.all %}
+                                Unfollow
+                                {% else %}
+                                Follow
+                                {% endif %}
+                            </button>
+                            {% endif %}
+                            {% else %}
+                            <!-- Guest (not logged in) -->
+                            <a href="{% url 'login' %}" class="follow-btn">Follow</a>
+                            {% endif %}
+                        </div>
+
+                        <p id="profile-bio">
+                            {{ profile_user.bio}}
+                        </p>
+
+                        <div class="profile-stats">
+                            <span><strong id="profile-posts-count">{{ user_posts|length }}</strong> Posts</span>
+                            <span><strong id="profile-followers-count">{{ profile_user.followers.count }}</strong> Followers</span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="post_hr_line">
+                <h2>Posts</h2>
+                {% if request.user == profile_user %}
+                <a class="upload-btn" href="{% url 'postUpload' %}"><i class="fa-solid fa-plus"></i></a>
+                {% endif %}
+            </div>
+
+            <!-- Posts Display Section -->
+            <div>
+                <div class="all-pst">
+                    <div class="card-list">
+                        {% for post in user_posts %}
+                        <div class="card" onclick="window.location.href='{% url 'post_detail' post.post_slug %}'">
+                            <img src="{{ post.image.url|default:'' }}" alt="{{ post.post_title|default:'Post image' }}"
+                                loading="lazy">
+                            <div class="read--time">
+                                <span>{{ post.read_count|default:0 }} read</span>
+                                <div class="dot" aria-hidden="true"></div>
+                                <span>{{ post.time_since_posted|default:'' }}</span>
+                            </div>
+                            <h2>{{ post.post_title|default:'Untitled' }}</h2>
+                            <!-- <p>{{ post.description|truncatewords:20|default:'' }}</p> -->
+                        </div>
+                        {% empty %}
+                        <p>No posts available.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
