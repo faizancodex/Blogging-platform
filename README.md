@@ -40,6 +40,41 @@ Users can read and explore blogs, follow creators, manage profiles, filter posts
 | Additional | Django Messages Framework, Slug URLs |
 
 ---
+
+## 🔧 Setup & Installation
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/faizancodex/wefyx.git
+cd wefyx
+```
+
+2️⃣ Create and activate virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate  # (Linux/Mac)
+venv\Scripts\activate     # (Windows)
+```
+
+### 3️⃣ Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run migrations
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 5️⃣ Start the server
+```bash
+python manage.py runserver
+```
+
+---
+
 ## 📸 Screenshots
 
 ### 🏠 Home Page  
