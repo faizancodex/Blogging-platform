@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('super-admin-portal/', admin.site.urls),
-     path('super-secret-admin-panel/', admin.site.urls), 
     path('tinymce/', include('tinymce.urls')),
 
     

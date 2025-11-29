@@ -4,7 +4,7 @@ from .models import Category, Post
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ('post_title', 'post_category', 'created_at', 'read_count')
-    list_filter = ('post_category', 'created_at')
+    list_filter = ('post_category', 'created_at', 'author')
     search_fields = ('post_title', 'description')
     date_hierarchy = 'created_at'
     ordering = ('-created_at',)
