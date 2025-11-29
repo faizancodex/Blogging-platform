@@ -54,11 +54,11 @@ wefyx/
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](screenshots/home.png)
+![Home Page](screenshots/homepage.png)
 
-### 👤 User Profile
-![User Profile](screenshots/profile.png)
+### 👤 Filter
+![Filter](screenshots/filter.png)
 
-### 📝 Blog View
-![Blog Page](screenshots/blog.png)
+### 📝 Post View
+![Blog Page](screenshots/readpost.png)
 
