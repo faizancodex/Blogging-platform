@@ -40,54 +40,69 @@ Users can read and explore blogs, follow creators, manage profiles, filter posts
 | Additional | Django Messages Framework, Slug URLs |
 
 ---
-
-## 📂 Project Structure
-wefyx/
-│
-├── users/ # User authentication & profile management
-├── blogs/ # Blog CRUD & categorization
-├── core/ # Main app config
-├── templates/ # HTML pages
-├── static/ # CSS, JS, Images
-└── manage.py
-
 ## 📸 Screenshots
 
-### 🏠 Home Page
+### 🏠 Home Page  
 ![Home Page](screenshots/homepage.png)
 
-### 👤 Filter
+---
+
+### 🔍 Filter Blogs  
 ![Filter](screenshots/filter.png)
 
-### 📝 Post View
-![Blog Page](screenshots/readpost.png)
+---
 
-### 📝 Creater Profile
-![Blog Page](screenshots/createrself.png)
+### 📖 Read Post  
+![Read Post](screenshots/readpost.png)
 
-### 📝 Edit Profile
-![Blog Page](screenshots/editprofile.png)
+---
 
-### 📝 Upload Post
-![Blog Page](screenshots/uploadpost.png)
+### 👤 Creator Profile  
+![Creator Profile](screenshots/createrself.png)
 
-### 📝 Explore Letest and Tranding Post
-![Blog Page](screenshots/explore.png)
+---
 
-### 📝 Bookstore
-![Blog Page](screenshots/bookstore.png)
+### ⚙️ Edit Profile  
+![Edit Profile](screenshots/editprofile.png)
 
-### 📝 Guides
-![Blog Page](screenshots/guides.png)
+---
 
-### 📝 Signin Page 
-![Blog Page](screenshots/signin.png)
+### ✍️ Upload Post  
+![Upload Post](screenshots/uploadpost.png)
 
-### 📝 Login Page
-![Blog Page](screenshots/loginpage.png)
+---
 
-### 📝 Forgot Password page
-![Blog Page](screenshots/forgotpassword.png)
+### 🚀 Explore Latest & Trending Posts  
+![Explore](screenshots/explore.png)
 
-### 📝 Reset Password 
-![Blog Page](screenshots/resetpassword.png)
+---
+
+### 📚 Bookstore  
+![Bookstore](screenshots/bookstore.png)
+
+---
+
+### 📘 Guides  
+![Guides](screenshots/guides.png)
+
+---
+
+### 🆕 Signup Page  
+![Signup](screenshots/signin.png)
+
+---
+
+### 🔐 Login Page  
+![Login Page](screenshots/loginpage.png)
+
+---
+
+### ❓ Forgot Password  
+![Forgot Password](screenshots/forgotpassword.png)
+
+---
+
+### 🔁 Reset Password  
+![Reset Password](screenshots/resetpassword.png)
+
+---
