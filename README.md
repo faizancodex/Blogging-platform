@@ -62,3 +62,32 @@ wefyx/
 ### 📝 Post View
 ![Blog Page](screenshots/readpost.png)
 
+### 📝 Creater Profile
+![Blog Page](screenshots/createrself.png)
+
+### 📝 Edit Profile
+![Blog Page](screenshots/editprofile.png)
+
+### 📝 Upload Post
+![Blog Page](screenshots/uploadpost.png)
+
+### 📝 Explore Letest and Tranding Post
+![Blog Page](screenshots/explore.png)
+
+### 📝 Bookstore
+![Blog Page](screenshots/bookstore.png)
+
+### 📝 Guides
+![Blog Page](screenshots/guides.png)
+
+### 📝 Signin Page 
+![Blog Page](screenshots/signin.png)
+
+### 📝 Login Page
+![Blog Page](screenshots/loginpage.png)
+
+### 📝 Forgot Password page
+![Blog Page](screenshots/forgotpasswordt.png)
+
+### 📝 Reset Password 
+![Blog Page](screenshots/resetpassword.png)
