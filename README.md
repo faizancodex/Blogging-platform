@@ -87,7 +87,7 @@ wefyx/
 ![Blog Page](screenshots/loginpage.png)
 
 ### 📝 Forgot Password page
-![Blog Page](screenshots/forgotpasswordt.png)
+![Blog Page](screenshots/forgotpassword.png)
 
 ### 📝 Reset Password 
 ![Blog Page](screenshots/resetpassword.png)
