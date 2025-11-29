@@ -46,7 +46,7 @@ Users can read and explore blogs, follow creators, manage profiles, filter posts
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/faizancodex/wefyx.git
+git https://github.com/faizancodex/Blogging-platform.git
 cd wefyx
 ```
 
